@@ -33,6 +33,7 @@ module.exports = appInfo => {
 
   exports.middleware = [
     'robot',
+    'errorHandler',
   ];
   // robot's configurations
   exports.robot = {
@@ -40,7 +41,10 @@ module.exports = appInfo => {
       /Baiduspider/i,
     ],
   };
-
+  // 只对 /api 前缀的 url 路径生效
+  exports.errorHandler = {
+    match: '/api',
+  };
   // 添加 news 的配置项
   exports.news = {
     apiKey: '0768092ccb1e414d98fba3bb0ca4cd07',
