@@ -24,7 +24,7 @@ module.exports = appInfo => {
         // 密码
         password: 'admin1234',
         // 数据库名
-        database: 'schema_ops',
+        database: 'ops_example',
       },
       // 是否加载到 app 上，默认开启
       app: true,

@@ -3,6 +3,12 @@
 const Service = require('egg').Service;
 
 class User extends Service {
+
+  async getUserById(id) {
+    // 根据id查询用户信息
+    return await this.app.mysql.get('user', { id });
+  }
+
   async list({ offset = 0, limit = 10 }) {
     return this.ctx.model.User.findAndCountAll({
       offset,
